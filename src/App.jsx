@@ -9,6 +9,7 @@ import Student from "./Studen";
 import Wrapper from "./Wrapper";
 import InputField from "./InputFiels";
 import Skills from "./Skills";
+import SelectGenderCityDropdown from "./SelectGenderCityDropdown";
 
 const PageName = "Login Page";
 
@@ -41,7 +42,15 @@ function App() {
       {displayProfile && <Profile />}
       {showLogin && <Userlogin />}
 
+      {/* //skill list */}
       <Skills />
+
+      {/* gender and city */}
+      <hr />
+      
+      <SelectGenderCityDropdown />
+      
+      <hr />
       
       <h1>Sum of 10 + 20: {sum(10, 20)}</h1>
 
