@@ -10,6 +10,7 @@ import Wrapper from "./Wrapper";
 import InputField from "./InputFiels";
 import Skills from "./Skills";
 import SelectGenderCityDropdown from "./SelectGenderCityDropdown";
+import UserList from "./UserList";
 
 const PageName = "Login Page";
 
@@ -42,6 +43,8 @@ function App() {
       {displayProfile && <Profile />}
       {showLogin && <Userlogin />}
 
+      {/* user list */}
+      <UserList />
       {/* //skill list */}
       <Skills />
 
