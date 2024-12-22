@@ -13,7 +13,9 @@ import SelectGenderCityDropdown from "./SelectGenderCityDropdown";
 import UserList from "./UserList";
 import Clock from "./Clock";
 import College from "./College";
-import Callonce from "./Callonce";
+import Callonce from "./useEffect/Callonce";
+import PropWithUseEffect from "./useEffect/PropWithUseEffect";
+import ComponentsLifeCycle from "./useEffect/ComponentsLifeCycle";
 
 const PageName = "Login Page";
 
@@ -24,7 +26,8 @@ function sum(val1, val2) {
 function App() {
   const [color, setColor] = useState("red");
   const [Clockcolor, setClockColor] = useState("red");
-
+  const [count, setCount] = useState(0);
+  const [DataWithProps, setDataWithProps] = useState(0);
   const [displayProfile, setDisplay] = useState(true);
   const [showLogin, setLogin] = useState(false);
   const [student, setStudent] = useState("anon");
@@ -38,45 +41,58 @@ function App() {
   };
 
   return (
-    <div>
+    <div style={styles.appContainer}>
       <Header />
       <h1>Welcome to {PageName}</h1>
-      <button onClick={() => alert("Please enter Login Details")}>Login</button>
-      <button onClick={ChangeColor}>Change Color</button>
-      <button onClick={() => setDisplay(!displayProfile)}>Show Profile</button>
 
+      {/* Buttons for basic interactions */}
+      <div style={styles.buttonGroup}>
+        <button onClick={() => alert("Please enter Login Details")}>Login</button>
+        <button onClick={ChangeColor}>Change Color</button>
+        <button onClick={() => setDisplay(!displayProfile)}>Show Profile</button>
+      </div>
+
+      {/* Conditional Rendering of Profile and Login */}
       {displayProfile && <Profile />}
       {showLogin && <Userlogin />}
 
-      {/* Use Effect Demo */}
-      {/* colege details  */}
-      <College />
-      <hr style={{ borderColor: 'green', borderWidth: '2px' }} />
+      {/* Handle Props side Effect with useEffect in component */}
+      <div style={styles.effectContainer}>
+        <hr style={styles.separator} />
+        <h1>Handle Props side Effect with useEffect</h1>
+        <button onClick={() => setCount(count + 1)}>Update Counter</button>
+        <button onClick={() => setDataWithProps(DataWithProps + 1)}>Update DataWithProps</button>
+        <PropWithUseEffect count={count} data={DataWithProps} />
+        <hr style={styles.separator} />
+      </div>
 
-      {/* Usue effect example */}
+      {/* ComponentsLifeCycle example */}
+       <ComponentsLifeCycle />
+
+      {/* College Details Section */}
+      <College />
+      <hr style={styles.separator} />
+
+      {/* useEffect Demo Section */}
       <Callonce />
 
-      {/* Display time */}
-      <select name="" id="" onChange={(event) => setClockColor(event.target.value)}>
-        <option value="red">Red</option>
-        <option value="pink">Pink</option>
-        <option value="green">reen</option>
-        <option value="yellow">Yellow</option>
+      {/* Digital Clock Section */}
+      <div style={styles.clockContainer}>
+        <select onChange={(event) => setClockColor(event.target.value)} style={styles.selectDropdown}>
+          <option value="red">Red</option>
+          <option value="pink">Pink</option>
+          <option value="green">Green</option>
+          <option value="yellow">Yellow</option>
+        </select>
+        <Clock color={Clockcolor} />
+      </div>
 
-      </select>
-      {/* digital clock */}
-      <Clock color={Clockcolor} />
-
-      {/* user list */}
+      {/* Other Sections */}
       <UserList />
-      {/* //skill list */}
       <Skills />
-
-      {/* gender and city */}
       <hr />
 
       <SelectGenderCityDropdown />
-
       <hr />
 
       <h1>Sum of 10 + 20: {sum(10, 20)}</h1>
@@ -114,5 +130,37 @@ function App() {
 function Apple() {
   return <h1>Apple</h1>;
 }
+
+// Styling object for the entire App
+const styles = {
+  appContainer: {
+    fontFamily: "Arial, sans-serif",
+    padding: "20px",
+    backgroundColor: "#f9f9f9",
+    color: "#333",
+  },
+  buttonGroup: {
+    marginBottom: "20px",
+  },
+  effectContainer: {
+    backgroundColor: "#eeeeee",
+    padding: "20px",
+    borderRadius: "8px",
+    boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
+    marginBottom: "20px",
+  },
+  separator: {
+    borderColor: 'green',
+    borderWidth: '2px',
+  },
+  clockContainer: {
+    marginTop: "20px",
+  },
+  selectDropdown: {
+    marginBottom: "10px",
+    padding: "10px",
+    fontSize: "16px",
+  },
+};
 
 export default App;
