@@ -13,6 +13,7 @@ import SelectGenderCityDropdown from "./SelectGenderCityDropdown";
 import UserList from "./UserList";
 import Clock from "./Clock";
 import College from "./College";
+import Callonce from "./Callonce";
 
 const PageName = "Login Page";
 
@@ -47,8 +48,13 @@ function App() {
       {displayProfile && <Profile />}
       {showLogin && <Userlogin />}
 
+      {/* Use Effect Demo */}
       {/* colege details  */}
       <College />
+      <hr style={{ borderColor: 'green', borderWidth: '2px' }} />
+
+      {/* Usue effect example */}
+      <Callonce />
 
       {/* Display time */}
       <select name="" id="" onChange={(event) => setClockColor(event.target.value)}>
