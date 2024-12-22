@@ -11,6 +11,7 @@ import InputField from "./InputFiels";
 import Skills from "./Skills";
 import SelectGenderCityDropdown from "./SelectGenderCityDropdown";
 import UserList from "./UserList";
+import Clock from "./Clock";
 
 const PageName = "Login Page";
 
@@ -20,6 +21,8 @@ function sum(val1, val2) {
 
 function App() {
   const [color, setColor] = useState("red");
+  const [Clockcolor, setClockColor] = useState("red");
+
   const [displayProfile, setDisplay] = useState(true);
   const [showLogin, setLogin] = useState(false);
   const [student, setStudent] = useState("anon");
@@ -43,7 +46,17 @@ function App() {
       {displayProfile && <Profile />}
       {showLogin && <Userlogin />}
 
-      {/* user list */}
+     {/* Display time */}      
+      <select name="" id="" onChange={(event)=>setClockColor(event.target.value)}>
+        <option value="red">Red</option>
+        <option value="pink">Pink</option>
+        <option value="green">reen</option>
+        <option value="yellow">Yellow</option>
+
+      </select>
+       <Clock 
+     color={Clockcolor} />
+     {/* user list */}
       <UserList />
       {/* //skill list */}
       <Skills />
