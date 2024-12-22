@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Profiler, useState } from "react";
 import Header from "./Heade";
 import Userlogin, { Profile, Setting } from "./UserLogin";
 import Todolist from "./Todolist";
@@ -16,7 +16,7 @@ import College from "./College";
 import Callonce from "./useEffect/Callonce";
 import PropWithUseEffect from "./useEffect/PropWithUseEffect";
 import ComponentsLifeCycle from "./useEffect/ComponentsLifeCycle";
-
+import ProfilePage from "./profile/ProfilePage";
 const PageName = "Login Page";
 
 function sum(val1, val2) {
@@ -45,6 +45,9 @@ function App() {
       <Header />
       <h1>Welcome to {PageName}</h1>
 
+      <hr />
+      {/* Profile picture */}
+      <ProfilePage />
       {/* Buttons for basic interactions */}
       <div style={styles.buttonGroup}>
         <button onClick={() => alert("Please enter Login Details")}>Login</button>
