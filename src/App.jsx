@@ -19,6 +19,7 @@ import ComponentsLifeCycle from "./useEffect/ComponentsLifeCycle";
 import ProfilePage from "./profile/ProfilePage";
 import DynamicProfile from "./profile/DynamicProfile";
 import ExternalCssDemo from "./profile/ExternalCssDemo";
+import ProfileModuleCss from "./profile/ProfileModuleCss";
 const PageName = "Login Page";
 
 function sum(val1, val2) {
@@ -57,7 +58,13 @@ function App() {
 
       {/* external css demo */}
       <ExternalCssDemo />
+
+      <hr />
       
+      {/* Module css demo */}
+      <ProfileModuleCss />
+      
+      <hr />
       {/* Buttons for basic interactions */}
       <div style={styles.buttonGroup}>
         <button onClick={() => alert("Please enter Login Details")}>Login</button>

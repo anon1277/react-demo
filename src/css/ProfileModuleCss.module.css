@@ -1,0 +1,30 @@
+/* Style for the heading */
+.heading {
+    color: green; /* Green color for the heading */
+}
+
+/* Style for profile image */
+.img {
+    width: 200px; /* Set the width of profile images */
+}
+
+/* Style for each profile card */
+.profile_card {
+    margin: 10px; /* Margin between profile cards */
+    width: 200px; /* Fixed width for each profile card */
+    border: solid black 1px; /* Border for the profile card */
+    box-shadow: black 1px 2px 3px 0px; /* Box shadow for 3D effect */
+}
+
+/* Text wrapper inside profile card */
+.text_wrap {
+    padding: 10px; /* Padding for text content */
+}
+
+/* Container to arrange profile cards in a flex layout */
+.container {
+    display: flex; /* Use flexbox layout */
+    flex-wrap: wrap; /* Allow the profile cards to wrap to the next line */
+}
+
+
