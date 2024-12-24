@@ -20,6 +20,7 @@ import ProfilePage from "./profile/ProfilePage";
 import DynamicProfile from "./profile/DynamicProfile";
 import ExternalCssDemo from "./profile/ExternalCssDemo";
 import ProfileModuleCss from "./profile/ProfileModuleCss";
+import styled from "styled-components";
 const PageName = "Login Page";
 
 function sum(val1, val2) {
@@ -38,7 +39,23 @@ function App() {
   const name = "Anon 1277";
   const age = 20;
   const email = "test@anon1277.com";
+  //styled component
+  const Heading = styled.h1`  font-size: 1.5em;
+  text-align: center;
+  width:100%;
+  color: palevioletred;
+  background: papayawhip;
+  border : solid 1px green
+  border:radius :10px`
 
+  //styled component
+  const Heading2 = styled.h1({
+    fontSize: "1.5em",
+    textAlign: "center",
+    color: "palevioletred",
+    background: "papayawhip",
+
+  })
   const ChangeColor = () => {
     setColor("green");
   };
@@ -46,6 +63,12 @@ function App() {
   return (
     <div style={styles.appContainer}>
       <Header />
+      {/* Heading styled Components example */}
+      <Heading>Welcome to Software Development Company</Heading>
+
+      {/* N styled Components example */}2
+
+      <Heading2>Our expertise is in Web Development, Front-End Development, and Back-End Development</Heading2>
       <h1>Welcome to {PageName}</h1>
 
       <hr />
@@ -54,13 +77,15 @@ function App() {
 
       <hr />
       {/* Dynamic User Profile list */}
+      <Heading>Our Software Development Team</Heading>
+
       <DynamicProfile />
 
       {/* external css demo */}
       <ExternalCssDemo />
 
       <hr />
-      
+
       {/* Module css demo */}
       <ProfileModuleCss />
       
