@@ -23,6 +23,15 @@ import ProfileModuleCss from "./profile/ProfileModuleCss";
 import styled from "styled-components";
 const PageName = "Login Page";
 
+// react Bootstrap Componenets
+import { Button } from "react-bootstrap";
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import Form from 'react-bootstrap/Form'
+import UserefDemo from "./UseRef/UseRefDemo";
+
 function sum(val1, val2) {
   return val1 + val2;
 }
@@ -63,14 +72,42 @@ function App() {
   return (
     <div style={styles.appContainer}>
       <Header />
-      {/* Heading styled Components example */}
-      <Heading>Welcome to Software Development Company</Heading>
 
-      {/* N styled Components example */}2
+        {/* Heading styled Components example */}
+        <Heading>Welcome to Software Development Company</Heading>
+
+      {/* N styled Components example */}
 
       <Heading2>Our expertise is in Web Development, Front-End Development, and Back-End Development</Heading2>
       <h1>Welcome to {PageName}</h1>
 
+      <Form>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Label>Email address</Form.Label>
+          <Form.Control type="email" placeholder="Enter email" />
+          <Form.Text className="text-muted">
+            We'll never share your email with anyone else.
+          </Form.Text>
+        </Form.Group>
+
+        <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Label> </Form.Label>
+          <Form.Control type="password" placeholder="Password" />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicCheckbox">
+          <Form.Check type="checkbox" label="Check me out" />
+        </Form.Group>
+        <Button variant="primary" type="submit">
+          Login
+        </Button>
+        <Button
+          style={{ margin: "10px" }} >Contact Us</Button>
+
+      </Form>
+      
+      
+      <hr />
+      <UserefDemo />
       <hr />
       {/* Profile picture */}
       <ProfilePage />
@@ -88,7 +125,7 @@ function App() {
 
       {/* Module css demo */}
       <ProfileModuleCss />
-      
+
       <hr />
       {/* Buttons for basic interactions */}
       <div style={styles.buttonGroup}>
@@ -112,7 +149,7 @@ function App() {
       </div>
 
       {/* ComponentsLifeCycle example */}
-       <ComponentsLifeCycle />
+      <ComponentsLifeCycle />
 
       {/* College Details Section */}
       <College />
