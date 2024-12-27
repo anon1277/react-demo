@@ -31,6 +31,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Form from 'react-bootstrap/Form'
 import UserefDemo from "./UseRef/UseRefDemo";
+import UnControlledComponenets from "./UseRef/UnControlledComponenets";
 
 function sum(val1, val2) {
   return val1 + val2;
@@ -105,7 +106,8 @@ function App() {
 
       </Form>
       
-      
+      <hr />
+      <UnControlledComponenets />
       <hr />
       <UserefDemo />
       <hr />
