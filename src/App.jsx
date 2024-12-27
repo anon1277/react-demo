@@ -32,6 +32,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import Form from 'react-bootstrap/Form'
 import UserefDemo from "./UseRef/UseRefDemo";
 import UnControlledComponenets from "./UseRef/UnControlledComponenets";
+import FunctionAsProps from "./FunctionAsProps";
 
 function sum(val1, val2) {
   return val1 + val2;
@@ -69,6 +70,16 @@ function App() {
   const ChangeColor = () => {
     setColor("green");
   };
+
+  // display Username Name
+  const displUsernameName = (name)=>{    
+    alert(`User name: ${name}`); // Correct usage of alert
+  }
+
+  // display Username Name
+  const GetUserName = (name)=>{    
+    alert("Get User name Called")
+  }
 
   return (
     <div style={styles.appContainer}>
@@ -111,6 +122,16 @@ function App() {
       <hr />
       <UserefDemo />
       <hr />
+
+      <hr />
+      <h1>Call Parent component function  from child component </h1>
+      <FunctionAsProps displUsernameName={displUsernameName} GetUserName={GetUserName}  name="Anon 1277"/>
+      <FunctionAsProps displUsernameName={displUsernameName} GetUserName={GetUserName} name="Lizard"/>
+
+      <FunctionAsProps displUsernameName={displUsernameName}  GetUserName={GetUserName} name="Root"/>
+
+      <FunctionAsProps displUsernameName={displUsernameName}  GetUserName={GetUserName} name="Blackhat"/>
+
       {/* Profile picture */}
       <ProfilePage />
 
