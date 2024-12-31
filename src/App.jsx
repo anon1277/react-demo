@@ -33,6 +33,7 @@ import Form from 'react-bootstrap/Form'
 import UserefDemo from "./UseRef/UseRefDemo";
 import UnControlledComponenets from "./UseRef/UnControlledComponenets";
 import FunctionAsProps from "./FunctionAsProps";
+import ForwardRef from "./UseRef/ForwardRef";
 
 function sum(val1, val2) {
   return val1 + val2;
@@ -122,6 +123,9 @@ function App() {
       <hr />
       <UserefDemo />
       <hr />
+      {/* forward ref demo */}
+      <ForwardRef />
+      {/* hr */}
 
       <hr />
       <h1>Call Parent component function  from child component </h1>
