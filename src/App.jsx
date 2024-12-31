@@ -34,6 +34,7 @@ import UserefDemo from "./UseRef/UseRefDemo";
 import UnControlledComponenets from "./UseRef/UnControlledComponenets";
 import FunctionAsProps from "./FunctionAsProps";
 import ForwardRef from "./UseRef/ForwardRef";
+import UseFormstatus from "./form/UseFormstatus";
 
 function sum(val1, val2) {
   return val1 + val2;
@@ -125,7 +126,10 @@ function App() {
       <hr />
       {/* forward ref demo */}
       <ForwardRef />
-      {/* hr */}
+      <hr />
+      {/* UseFormstatus hook example */}
+      <UseFormstatus />
+
 
       <hr />
       <h1>Call Parent component function  from child component </h1>
