@@ -35,6 +35,7 @@ import UnControlledComponenets from "./UseRef/UnControlledComponenets";
 import FunctionAsProps from "./FunctionAsProps";
 import ForwardRef from "./UseRef/ForwardRef";
 import UseFormstatus from "./form/UseFormstatus";
+import UseTransitionDemo from "./useTransition/UseTransitionDemo";
 
 function sum(val1, val2) {
   return val1 + val2;
@@ -129,6 +130,10 @@ function App() {
       <hr />
       {/* UseFormstatus hook example */}
       <UseFormstatus />
+      <hr />
+      {/* UseTransitionDemo */}
+      <UseTransitionDemo />
+      <hr />
 
 
       <hr />
