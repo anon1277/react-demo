@@ -1,0 +1,41 @@
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.input-section input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.button-section button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #17a2b8;
+    color: #fff;
+    cursor: pointer;
+}
+
+.button-section button:hover {
+    background-color: #138496;
+}
+
+.users-list {
+    margin-top: 20px;
+}
+
+.user-entry {
+    padding: 10px;
+    margin-bottom: 5px;
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    text-align: left;
+}

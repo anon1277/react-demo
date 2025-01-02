@@ -36,6 +36,7 @@ import FunctionAsProps from "./FunctionAsProps";
 import ForwardRef from "./UseRef/ForwardRef";
 import UseFormstatus from "./form/UseFormstatus";
 import UseTransitionDemo from "./useTransition/UseTransitionDemo";
+import DerivedState from "./DerivedState/DerivedState";
 
 function sum(val1, val2) {
   return val1 + val2;
@@ -133,6 +134,9 @@ function App() {
       <hr />
       {/* UseTransitionDemo */}
       <UseTransitionDemo />
+      <hr />
+      {/* Derived state demo */}
+      <DerivedState />
       <hr />
 
 
