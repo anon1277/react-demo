@@ -37,6 +37,8 @@ import ForwardRef from "./UseRef/ForwardRef";
 import UseFormstatus from "./form/UseFormstatus";
 import UseTransitionDemo from "./useTransition/UseTransitionDemo";
 import DerivedState from "./DerivedState/DerivedState";
+import LiftingStateup from "./Lifting/LiftingStateup";
+import UpdateObject from "./UpdateObject/UpdateObject";
 
 function sum(val1, val2) {
   return val1 + val2;
@@ -137,6 +139,12 @@ function App() {
       <hr />
       {/* Derived state demo */}
       <DerivedState />
+      <hr />
+      <LiftingStateup />
+      <hr />
+
+      {/* object update */}
+      <UpdateObject />
       <hr />
 
 
