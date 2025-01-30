@@ -39,6 +39,8 @@ import UseTransitionDemo from "./useTransition/UseTransitionDemo";
 import DerivedState from "./DerivedState/DerivedState";
 import LiftingStateup from "./Lifting/LiftingStateup";
 import UpdateObject from "./UpdateObject/UpdateObject";
+import UpDateArray from "./UpDateArray/UpDateArray";
+// import UseActionStateDemo from "./UseActionState/UseActionState";
 
 function sum(val1, val2) {
   return val1 + val2;
@@ -91,6 +93,13 @@ function App() {
     <div style={styles.appContainer}>
       <Header />
 
+      <hr />
+      {/* Use ActionState Form validation */}
+      {/* <UseActionStateDemo /> */}
+      {/* update Array Action */}
+      {/* UpDateArray */}
+      <UpDateArray />
+      <hr />
         {/* Heading styled Components example */}
         <Heading>Welcome to Software Development Company</Heading>
 
