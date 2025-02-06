@@ -40,6 +40,9 @@ import DerivedState from "./DerivedState/DerivedState";
 import LiftingStateup from "./Lifting/LiftingStateup";
 import UpdateObject from "./UpdateObject/UpdateObject";
 import UpDateArray from "./UpDateArray/UpDateArray";
+import UseidDeom from "./Useid/UseidDeom";
+import CollegeContent from "./ContextApi/CollegeContent";
+import { SubjectContentData } from "./ContextApi/Contextdata";
 // import UseActionStateDemo from "./UseActionState/UseActionState";
 
 function sum(val1, val2) {
@@ -54,6 +57,7 @@ function App() {
   const [displayProfile, setDisplay] = useState(true);
   const [showLogin, setLogin] = useState(false);
   const [student, setStudent] = useState("anon");
+  const [subject, setSubject] = useState("English"); //Context Api
 
   const name = "Anon 1277";
   const age = 20;
@@ -92,9 +96,29 @@ function App() {
   return (
     <div style={styles.appContainer}>
       <Header />
-
       <hr />
-      {/* Use ActionState Form validation */}
+      {/* Content API Demo */}
+        <div style={{background:'yellow', padding:10}}>
+          <SubjectContentData.Provider value={subject}>
+           <label style={{ margin:10 }}>  Context API Demo </label>
+            <select className="form-control" value={subject} onChange={(event)=>setSubject(event.target.value)} style={{ width:"150px" ,margin:10}}>
+              <option value="Math">Select Subject</option>
+              <option value="Math">Math</option>
+              <option value="English">English</option>
+              <option value="SS">SS</option>
+              <option value="Science">Science</option>
+            </select>
+            {/* Clear Subject button */}
+            <button className="btn btn-primary"  style={{ margin:10 }}  onClick={()=>setSubject('')}>Clear Subject</button>
+            
+            <CollegeContent />
+          </SubjectContentData.Provider>
+        <hr />
+        </div>
+
+      {/* Use id demo */}
+       <UseidDeom /> 
+       
       {/* <UseActionStateDemo /> */}
       {/* update Array Action */}
       {/* UpDateArray */}
@@ -107,7 +131,7 @@ function App() {
 
       <Heading2>Our expertise is in Web Development, Front-End Development, and Back-End Development</Heading2>
       <h1>Welcome to {PageName}</h1>
-
+    {/* Use ActionState Form validation */}
       <Form>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
@@ -117,7 +141,7 @@ function App() {
           </Form.Text>
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Group className="mb-3 form-control" controlId="formBasicPassword">
           <Form.Label> </Form.Label>
           <Form.Control type="password" placeholder="Password" />
         </Form.Group>
