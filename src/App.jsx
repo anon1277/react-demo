@@ -44,6 +44,7 @@ import UseidDeom from "./Useid/UseidDeom";
 import CollegeContent from "./ContextApi/CollegeContent";
 import { SubjectContentData } from "./ContextApi/Contextdata";
 import useToogle from "./customhook/useToogle";
+import { Link, Route, Routes } from "react-router";
 // import UseActionStateDemo from "./UseActionState/UseActionState";
 
 function sum(val1, val2) {
@@ -99,6 +100,18 @@ function App() {
   return (
     <div style={styles.appContainer}>
       <Header />
+
+      {/* Router Example */}
+
+      <Link to="/skills"> Skills  </Link>
+      <Link to="/college"> College  </Link>
+      {/* router Routes */}
+      <Routes>
+          <Route path="/skills"element={<Skills />} />
+          <Route path="/college"element={<College />} />
+          <Route path="/skills"element={<Skills />} />
+          <Route path="/skills"element={<Skills />} />
+      </Routes>
       <hr />
       {/* Custom Hook Demo */}
          <button className="btn btn-primary m-3" onClick={toogleValue}>Toggle Heading</button>

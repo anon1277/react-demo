@@ -5,9 +5,12 @@ import App from './App.jsx'
 import Header from './Heade.jsx'
 //boostrap
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter } from 'react-router'
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
+  <BrowserRouter>
+    <StrictMode>
+      <App />
+    </StrictMode>,
+  </BrowserRouter>
 )
