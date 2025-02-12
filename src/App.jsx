@@ -43,6 +43,7 @@ import UpDateArray from "./UpDateArray/UpDateArray";
 import UseidDeom from "./Useid/UseidDeom";
 import CollegeContent from "./ContextApi/CollegeContent";
 import { SubjectContentData } from "./ContextApi/Contextdata";
+import useToogle from "./customhook/useToogle";
 // import UseActionStateDemo from "./UseActionState/UseActionState";
 
 function sum(val1, val2) {
@@ -58,6 +59,7 @@ function App() {
   const [showLogin, setLogin] = useState(false);
   const [student, setStudent] = useState("anon");
   const [subject, setSubject] = useState("English"); //Context Api
+  const [value,toogleValue] = useToogle(true)
 
   const name = "Anon 1277";
   const age = 20;
@@ -92,10 +94,18 @@ function App() {
   const GetUserName = (name)=>{    
     alert("Get User name Called")
   }
-
+  console.log("value" ,value);
+  
   return (
     <div style={styles.appContainer}>
       <Header />
+      <hr />
+      {/* Custom Hook Demo */}
+         <button className="btn btn-primary m-3" onClick={toogleValue}>Toggle Heading</button>
+         <button className="btn btn-primary m-3" onClick={()=>toogleValue(false)} >Hide Heading</button>
+         <button className="btn btn-primary m-3" onClick={()=>toogleValue(true)}>Show Heading</button>
+        
+         {value ? 'Hello Toogle Showing' : ''}
       <hr />
       {/* Content API Demo */}
         <div style={{background:'yellow', padding:10}}>
