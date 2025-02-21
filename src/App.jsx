@@ -45,6 +45,9 @@ import CollegeContent from "./ContextApi/CollegeContent";
 import { SubjectContentData } from "./ContextApi/Contextdata";
 import useToogle from "./customhook/useToogle";
 import { Link, Route, Routes } from "react-router";
+import CollegeDetails from "./college-details/CollegeDetails";
+import Department from "./college-details/Department";
+import Result from "./college-details/Result";
 // import UseActionStateDemo from "./UseActionState/UseActionState";
 
 function sum(val1, val2) {
@@ -103,13 +106,18 @@ function App() {
 
       {/* Router Example */}
 
-      <Link to="/skills"> Skills  </Link>
-      <Link to="/college"> College  </Link>
       {/* router Routes */}
       <Routes>
           <Route path="/skills"element={<Skills />} />
-          <Route path="/college"element={<College />} />
-          <Route path="/skills"element={<Skills />} />
+          <Route path="/college-data"element={<College />} />
+          {/* College nested Routes */}
+          <Route path="/college-details"element={<CollegeDetails />}>
+              <Route path="student"element={<Student />} />
+              <Route path="department"element={<Department />} />
+              <Route path="result"element={<Result />} />
+              <Route path="college-data"element={<College />} />
+              
+          </Route>
           <Route path="/skills"element={<Skills />} />
       </Routes>
       <hr />
